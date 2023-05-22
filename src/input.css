@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[140rem] mx-auto p-[1.5rem];
+}
+@layer base{
+    html{
+        font-family:LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;
+    }
+}
+@layer components{
+    .header{
+        @apply relative lg:bg-light;
+    }
+    .header__wrapper{
+        @apply flex items-center justify-between;
+    }
+    .header__nav{
+        @apply hidden lg:flex;
+    }
+    .header__nav ul{
+        @apply flex gap-[3rem];
+    }
+    .header__nav ul li{
+        @apply hover:scale-[1.05] transition-all duration-500;
+    }
+    .header__nav ul li a{
+        @apply text-[1.2rem] font-semibold text-gray-400 ;
+    }
+    .toggle__menu{
+        @apply bg-grey rounded-full px-[.8rem] py-[1rem] lg:hidden;
+    }
+    .toggle__menu span{
+        @apply w-[1.5rem] h-[.15rem] bg-dark block rounded-full transition-[.5s] ease-in ;
+    }
+    .toggle__menu span:nth-child(2){
+        @apply my-[.2rem];
+    }
+    .toggle__menu.open span:first-child{
+        @apply translate-x-0 translate-y-[6px] rotate-[225deg] ease-in;
+    }
+    .toggle__menu.open span:last-child{
+        @apply translate-x-0 translate-y-[-5px] rotate-[-225deg] ease-in;
+    }
+    .toggle__menu.open span:nth-child(2){
+        @apply opacity-0  transition-[.5s] ease-in;
+    }
+    .header__actions{
+        @apply absolute bg-light  top-[5.8rem] left-0 w-full max-h-0 overflow-hidden transition-all lg:relative lg:bg-light lg:top-[-4.4rem] lg:w-fit lg:overflow-visible;
+    }
+    .header__actions.open{
+        @apply max-h-[50rem] transition-all border-t-2 lg:border-t-0 z-auto;
+    }
+    .header__actions ul li{
+        @apply pt-[1.5rem] px-[1.5rem] lg:hidden;
+    }
+    .header__actions ul li a{
+        @apply text-[1.5rem] font-semibold text-gray-400;
+    }
+    .header__download{
+        @apply mx-[1.5rem] my-[3rem];
+    }
+    .header__download a{
+        @apply inline-block px-[1rem] py-[.5rem] bg-primary w-full rounded-full text-center text-light text-[1.5rem] font-semibold hover:scale-[1.03] transition-all duration-200 lg:text-[1.2rem];
+    }
+
+}
+
+@layer components{
+    .banner{
+        @apply border-b-2;
+    }
+
+    .banner__text{
+        @apply text-center;
+    }
+    .banner__text h2{
+        @apply text-[2.5rem] text-dark font-bold lg:text-[5rem];
+    }
+    .banner__text span{
+        @apply text-primary;
+    }
+    .banner__text p{
+        @apply text-[1.1rem] mb-10 lg:text-[2rem] lg:w-[40rem] lg:mx-auto;
+    }
+    .banner__text h1{
+        @apply text-[2.5rem] font-bold text-dark w-[18rem] mx-auto leading-10 mt-[2.5rem] lg:text-[5rem] lg:w-[45rem] lg:leading-snug; 
+    }
+
+    .banner__content img{
+        @apply rounded-[2rem] hover:scale-[1.05] lg:w-[70rem] lg:mx-auto lg:mt-[5rem] lg:my-[10rem];
+    }
+
+    .banner__button{
+        @apply mx-[1.5rem] my-[2rem];
+    }
+
+    .banner__button a{
+        @apply flex px-[1.6rem] mx-auto py-[.5rem] bg-primary w-[9rem] rounded-full text-center text-light text-[1.2rem] font-semibold hover:scale-[1.03] transition-all duration-200 lg:h-[4rem] lg:w-[14rem] lg:text-[1.8rem] lg:px-[2.8rem] lg:py-[0.7rem];
+    }
+
+}
+
+@layer components{
+    .footer__links{
+        @apply my-[3rem];
+    }
+
+    .footer__links__item:not(:first-child){
+        @apply my-[3rem];
+    }
+    .footer__links__item:not(:last-child){
+        @apply my-[3rem];
+    }
+
+    .footer__links__item h4{
+        @apply flex items-center justify-between;
+    }
+    .footer__links__item h4 span{
+        @apply font-bold;
+    }
+    .footer__links__item h4 i{
+        @apply transition-[.5s] ease-in;
+    }
+
+    .footer__links__item h4 i.open{
+        @apply rotate-[180deg] ease-in transition-[.5s];
+    }
+
+    .footer__links__item ul{
+        @apply my-[2rem] max-h-0 overflow-hidden transition-[.5s] ease-in;
+    }
+    .footer__links__item ul.open{
+        @apply max-h-[25rem] transition-[.5s] ease-in;
+    }
+    .footer__links__item ul li{
+        @apply py-[1rem] px-[.5rem] text-grey hover:scale-[1.02] transition-[.5s] ease-linear;
+    }
+    .footer__links__item ul li a{
+        @apply text-dark;
+    }
+    .footer__icons ul{
+        @apply flex items-center gap-[1.5rem];
+    }
+    .footer__icons ul li a{
+        @apply px-[.75rem] py-[.7rem] bg-primary rounded-full; 
+    }
+    .footer__icons ul li a i{
+        @apply text-light;
+    }
+    .footer__details img{
+        @apply mx-auto my-[2rem];
+    }
+    .footer__details p{
+        @apply text-center my-[1rem];
+    }
+}
