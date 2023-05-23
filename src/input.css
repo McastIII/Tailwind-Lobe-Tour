@@ -33,19 +33,19 @@
         @apply bg-grey rounded-full px-[.8rem] py-[1rem] lg:hidden;
     }
     .toggle__menu span{
-        @apply w-[1.5rem] h-[.15rem] bg-dark block rounded-full transition-[.5s] ease-in ;
+        @apply w-[1.5rem] h-[.15rem] bg-dark block rounded-full duration-[.5s] ease-in ;
     }
     .toggle__menu span:nth-child(2){
         @apply my-[.2rem];
     }
     .toggle__menu.open span:first-child{
-        @apply translate-x-0 translate-y-[6px] rotate-[225deg] ease-in;
+        @apply translate-x-0 translate-y-[6px] duration-[.5s] rotate-[225deg] ease-in;
     }
     .toggle__menu.open span:last-child{
-        @apply translate-x-0 translate-y-[-5px] rotate-[-225deg] ease-in;
+        @apply translate-x-0 translate-y-[-5px] duration-[.5s] rotate-[-225deg] ease-in;
     }
     .toggle__menu.open span:nth-child(2){
-        @apply opacity-0  transition-[.5s] ease-in;
+        @apply opacity-0  duration-[.5s] ease-in;
     }
     .header__actions{
         @apply absolute bg-light  top-[5.8rem] left-0 w-full max-h-0 overflow-hidden transition-all lg:relative lg:bg-light lg:top-[-4.4rem] lg:w-fit lg:overflow-visible;
@@ -107,7 +107,12 @@
     .footer__links{
         @apply my-[3rem];
     }
-
+    .footer__wrapper{
+        @apply lg:flex lg:flex-row-reverse lg:items-center lg:justify-evenly;
+    }
+    .footer__links{
+        @apply lg:grid lg:grid-cols-5 lg:gap-2;
+    }
     .footer__links__item:not(:first-child){
         @apply my-[3rem];
     }
@@ -122,27 +127,30 @@
         @apply font-bold;
     }
     .footer__links__item h4 i{
-        @apply transition-[.5s] ease-in;
+        @apply duration-[.5s] ease-in lg:hidden;
     }
 
     .footer__links__item h4 i.open{
-        @apply rotate-[180deg] ease-in transition-[.5s];
+        @apply rotate-[180deg] ease-in duration-[.5s];
     }
 
     .footer__links__item ul{
-        @apply my-[2rem] max-h-0 overflow-hidden transition-[.5s] ease-in;
+        @apply my-[2rem] max-h-0 overflow-hidden duration-[.5s] ease-in lg:overflow-visible;
     }
     .footer__links__item ul.open{
-        @apply max-h-[25rem] transition-[.5s] ease-in;
+        @apply max-h-[25rem] duration-[.5s] ease-in;
     }
     .footer__links__item ul li{
-        @apply py-[1rem] px-[.5rem] text-grey hover:scale-[1.02] transition-[.5s] ease-linear;
+        @apply py-[1rem] px-[.5rem] text-grey hover:scale-[1.02] duration-[.5s] ease-linear lg:px-0;
     }
     .footer__links__item ul li a{
         @apply text-dark;
     }
     .footer__icons ul{
-        @apply flex items-center gap-[1.5rem];
+        @apply flex items-center gap-[1.5rem] lg:my-[3rem];
+    }
+    .footer__icons ul li{
+        @apply hover:scale-[1.1] duration-[.5s] ease-in;
     }
     .footer__icons ul li a{
         @apply px-[.75rem] py-[.7rem] bg-primary rounded-full; 
@@ -151,9 +159,106 @@
         @apply text-light;
     }
     .footer__details img{
-        @apply mx-auto my-[2rem];
+        @apply mx-auto mt-[4rem] lg:mx-0 lg:mt-[6rem];
     }
     .footer__details p{
-        @apply text-center my-[1rem];
+        @apply text-center my-[1rem] lg:text-left;
     }
 }
+
+@layer components{
+    .faq .container{
+        @apply max-w-[70rem];
+    }
+    .faq__wrapper{
+        @apply lg:grid lg:grid-cols-[1.5fr,2.5fr] items-start;
+    }
+    .faq__tab{
+        @apply hidden lg:block;
+    }
+    .faq__question{
+        @apply py-[2rem] border-b-[1px];
+    }
+    .faq__question:first-child{
+        @apply pt-0 pb-[2rem];
+    }
+    .faq__question h4{
+        @apply flex items-center justify-between;
+    }
+    .faq__question h4 i{
+        @apply transition ease-in-out duration-[.5s];
+    }
+    .faq__question h4 i.open{
+        @apply transform rotate-[180deg];
+    }
+    .faq__tab__content__answer{
+        @apply max-h-[0rem] overflow-hidden transition-all;
+    }
+    .faq__tab__content__answer.open{
+        @apply max-h-[50rem] transition-all;
+    }
+    .faq__nav li{
+        @apply p-[1rem] max-w-[15rem];
+    }
+    .faq__nav li.active{
+        @apply bg-primary rounded-xl;
+    }
+    .faq__tab__content{
+        @apply hidden;
+    }
+    .faq__tab__content.active{
+        @apply block;
+    }
+}
+
+/* @layer components{
+
+.help__title h2{
+    @apply text-[2rem] text-center;
+}
+ .help__list__item:not(:first-child){
+    @apply my-[2rem];
+}
+.help__list__item:not(:last-child){
+    @apply my-[2rem];
+} 
+.help__list__item{
+    @apply border-b-2 my-[2rem] block;
+}
+
+.help__list__item h4{
+    @apply flex items-center justify-between;
+}
+.help__list__item h4 span{
+    @apply font-bold max-w-[20rem];
+}
+.help__list__item h4 i{
+    @apply transition-[.5s] ease-in lg:hidden;
+}
+
+.help__list__item h4 i.open{
+    @apply rotate-[180deg] ease-in transition-[.5s];
+}
+.help__list__item__content p a{
+    @apply underline;
+}
+
+.help__list__item__content{
+    @apply my-[2rem] max-h-0 overflow-hidden transition-[.5s] ease-in lg:overflow-visible;
+}
+.help__list__item__content.open{
+    @apply max-h-[50rem] transition-[.5s] ease-in;
+}
+.help__list__item__content p span{
+    @apply underline cursor-pointer;
+}
+.help__list__item__content ul li{
+    @apply py-[1rem] px-[.5rem] lg:px-0;
+}
+.help__list__item__content ul li a{
+    @apply text-dark underline;
+}
+.help__list__item__content ul li a i{
+    @apply mr-[2rem];
+}
+} */
