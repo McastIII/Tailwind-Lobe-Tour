@@ -173,6 +173,18 @@
     .faq__wrapper{
         @apply lg:grid lg:grid-cols-[1.5fr,2.5fr] items-start;
     }
+    .faq__text{
+        @apply mb-[3rem];
+    }
+    .faq__text h1{
+        @apply text-[2.5rem] text-dark text-center font-bold lg:text-[5rem];
+    }
+    .faq__text h1 span{
+        @apply text-primary;
+    }
+    .faq__text p{
+        @apply text-dark text-center text-[1.2rem] mt-[.5rem] lg:text-[1.5rem] lg:max-w-[30rem] lg:mx-auto;
+    }
     .faq__tab{
         @apply hidden lg:block;
     }
@@ -185,6 +197,9 @@
     .faq__question h4{
         @apply flex items-center justify-between;
     }
+    .faq__question h4 span{
+        @apply font-bold text-dark;
+    }
     .faq__question h4 i{
         @apply transition ease-in-out duration-[.5s];
     }
@@ -194,14 +209,47 @@
     .faq__tab__content__answer{
         @apply max-h-[0rem] overflow-hidden transition-all;
     }
+    .faq__tab__content__answer h5{
+        @apply my-[1.5rem] text-dark;
+    }
+    .faq__tab__content__answer h5 span{
+        @apply font-bold;
+    }
+    .faq__tab__content__answer h6{
+        @apply font-bold;
+    }
+    .faq__tab__content__answer p{
+        @apply my-[1.5rem] text-dark;
+    }
+    .faq__tab__content__answer p i{
+        @apply mr-[1rem];
+    }
+    .faq__tab__content__answer p span{
+        @apply font-bold;
+    }
+    .faq__tab__content__answer a{
+        @apply underline text-dark;
+    }
+    .faq__tab__content__answer ul li{
+        @apply my-[1.5rem];
+    }
+    .faq__tab__content__answer ul li span{
+        @apply font-bold;
+    }
+    .faq__tab__content__answer ul li i{
+        @apply mr-[1rem];
+    }
     .faq__tab__content__answer.open{
-        @apply max-h-[50rem] transition-all;
+        @apply max-h-[100rem] transition-all;
     }
     .faq__nav li{
-        @apply p-[1rem] max-w-[15rem];
+        @apply p-[1rem] max-w-[15rem] text-dark font-bold;
     }
     .faq__nav li.active{
-        @apply bg-primary rounded-xl;
+        @apply bg-primary rounded-xl text-light;
+    }
+    .faq__keme li{
+        @apply p-[1rem]  text-dark font-bold;
     }
     .faq__tab__content{
         @apply hidden;
@@ -209,56 +257,86 @@
     .faq__tab__content.active{
         @apply block;
     }
+    .faq__ask{
+        @apply border-b-[1px];
+    }
+    .faq__ask h4{
+        @apply my-[2rem] flex items-center justify-between;
+    }
+    .faq__ask span i{
+        @apply text-[1.5rem];
+    }
+    .faq__ask h4 span{
+       @apply font-bold text-dark;
+    }
 }
 
-/* @layer components{
+@layer components{
 
-.help__title h2{
-    @apply text-[2rem] text-center;
-}
- .help__list__item:not(:first-child){
-    @apply my-[2rem];
-}
-.help__list__item:not(:last-child){
-    @apply my-[2rem];
+    .examples__wrapper{
+        @apply lg:grid lg:grid-cols-2 lg:max-w-[75rem] lg:gap-[2rem] lg:mx-auto;
+    }
+    .examples__text h1{
+        @apply text-center text-[2.5rem] font-bold text-dark lg:text-[5rem];
+    }
+    .examples__text h1 span{
+        @apply text-primary;
+    }
+    .examples__text p{
+        @apply text-center text-[1.15rem] mb-[3rem] lg:text-[2rem] lg:max-w-[50rem] lg:mx-auto;
+    }
+    .examples__card{
+        @apply rounded-[2rem] h-[30rem] shadow-2xl bg-light my-[2rem] lg:h-[37rem] lg:w-[35rem];
+    }
+    .examples__card video{
+        @apply rounded-t-[2rem];
+    }
+    .examples__card__text{
+        @apply p-[1.5rem];
+    }
+    .examples__card__text h5{
+        @apply font-bold py-[.5rem] text-[1.2rem] text-dark lg:text-[1.5rem];
+    }
+    .examples__card__text p{
+        @apply  py-[.5rem] text-dark lg:text-[1.2rem];
+    }
 } 
-.help__list__item{
-    @apply border-b-2 my-[2rem] block;
-}
 
-.help__list__item h4{
-    @apply flex items-center justify-between;
-}
-.help__list__item h4 span{
-    @apply font-bold max-w-[20rem];
-}
-.help__list__item h4 i{
-    @apply transition-[.5s] ease-in lg:hidden;
-}
-
-.help__list__item h4 i.open{
-    @apply rotate-[180deg] ease-in transition-[.5s];
-}
-.help__list__item__content p a{
-    @apply underline;
-}
-
-.help__list__item__content{
-    @apply my-[2rem] max-h-0 overflow-hidden transition-[.5s] ease-in lg:overflow-visible;
-}
-.help__list__item__content.open{
-    @apply max-h-[50rem] transition-[.5s] ease-in;
-}
-.help__list__item__content p span{
-    @apply underline cursor-pointer;
-}
-.help__list__item__content ul li{
-    @apply py-[1rem] px-[.5rem] lg:px-0;
-}
-.help__list__item__content ul li a{
-    @apply text-dark underline;
-}
-.help__list__item__content ul li a i{
-    @apply mr-[2rem];
-}
-} */
+@layer components{
+    .blog__text{
+      @apply mb-[3rem]; 
+    }
+    .blog__text span {
+      @apply text-[2rem] text-primary lg:text-[5rem]
+    }
+    .blog__text h2{
+      @apply text-[2rem] font-bold text-center text-dark lg:text-[5rem]
+    }
+    .blog__text p{
+      @apply text-[1.2rem] text-center lg:text-[1.5rem] lg:max-w-[700px] lg:flex lg:mx-auto
+    }
+    .blog__play{
+    @apply hover:scale-[1.05] transition-all  rounded-[2rem] bg-grey h-[30rem] mb-[2rem] lg:w-[37rem] lg:h-[37rem] lg:mb-[4rem] shadow-2xl cursor-pointer
+    }
+    .blog__play img{
+      @apply rounded-t-[2rem] lg:w-[40rem] 
+    }
+    .blog__cards{
+    @apply m-[2rem]
+    }
+    .blog__cards h3{
+      @apply text-[1.2rem] text-dark font-bold mb-[2rem]
+    }
+    .blog__cards p{
+      @apply text-justify w-[23rem] text-[1rem] text-dark mb-[2rem]
+    }
+    .blog__cards span{
+      @apply text-gray-500
+    }
+    .lahat{
+      @apply lg:grid grid-cols-2 lg:gap-x-[4rem] lg:max-w-[70%] lg:mx-auto
+    }
+    .hiwalay{
+      @apply lg:flex lg:justify-center
+    }
+    }
